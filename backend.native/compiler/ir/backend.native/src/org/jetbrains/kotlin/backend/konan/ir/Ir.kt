@@ -367,6 +367,9 @@ internal class KonanSymbols(context: Context, val symbolTable: SymbolTable, val 
     val getContinuation = symbolTable.referenceSimpleFunction(
             context.getInternalFunctions("getContinuation").single())
 
+    val returnIfSuspended = symbolTable.referenceSimpleFunction(
+            context.getInternalFunctions("returnIfSuspended").single())
+
     val konanSuspendCoroutineUninterceptedOrReturn = symbolTable.referenceSimpleFunction(
             context.getInternalFunctions("suspendCoroutineUninterceptedOrReturn").single())
 
