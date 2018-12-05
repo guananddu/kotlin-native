@@ -64,10 +64,6 @@ internal class KonanLower(val context: Context, val parentPhaser: PhaseManager) 
             irModule.files.forEach(InteropLoweringPart1(context)::lower)
         }
 
-        phaser.phase(KonanPhase.LOWER_LATEINIT) {
-            irModule.files.forEach(LateinitLowering(context)::lower)
-        }
-
         val symbolTable = context.ir.symbols.symbolTable
 
         do {
@@ -81,6 +77,9 @@ internal class KonanLower(val context: Context, val parentPhaser: PhaseManager) 
     }
 
     private fun lowerFile(irFile: IrFile, phaser: PhaseManager) {
+        phaser.phase(KonanPhase.LOWER_LATEINIT) {
+            LateinitLowering(context).lower(irFile)
+        }
         phaser.phase(KonanPhase.LOWER_STRING_CONCAT) {
             StringConcatenationLowering(context).lower(irFile)
         }

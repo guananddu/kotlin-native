@@ -15,8 +15,10 @@ import org.jetbrains.kotlin.backend.konan.irasdescriptors.PackageFragmentDescrip
 import org.jetbrains.kotlin.backend.konan.irasdescriptors.SimpleFunctionDescriptor
 import org.jetbrains.kotlin.backend.konan.isInlined
 import org.jetbrains.kotlin.descriptors.*
+import org.jetbrains.kotlin.ir.declarations.IrProperty
 import org.jetbrains.kotlin.ir.declarations.IrSimpleFunction
 import org.jetbrains.kotlin.ir.types.isUnit
+import org.jetbrains.kotlin.ir.util.dump
 import org.jetbrains.kotlin.name.FqName
 import org.jetbrains.kotlin.types.SimpleType
 

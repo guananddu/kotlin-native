@@ -435,7 +435,7 @@ internal class KonanSymbols(context: Context, val symbolTable: SymbolTable, val 
                 } && !it.isExpect
             }
 
-    val isInitializedGetterDescriptor = isInitializedPropertyDescriptor.getter!!
+    val isInitializedGetter = symbolTable.referenceSimpleFunction(isInitializedPropertyDescriptor.getter!!)
 
     val kFunctionImpl =  symbolTable.referenceClass(context.reflectionTypes.kFunctionImpl)
 
